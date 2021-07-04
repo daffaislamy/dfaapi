@@ -2556,7 +2556,7 @@ router.get('/ig/stalk', async (req, res, next) => {
 	if(apikeyInput != 'Alphabot') return res.json(loghandler.invalidKey)
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
 
-       fetch(encodeURI(`https://api.zeks.xyz/api/igstalk?apikey=apivinz&username=daffaislamy_17${username}`))
+       fetch(encodeURI(`https://api.i-tech.id/dl/stalk?key=restuganteng&username=${username}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
