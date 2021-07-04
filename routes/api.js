@@ -1480,7 +1480,7 @@ router.get('/jadwalshalat', async (req, res, next) => {
 	if(apikeyInput != 'Alphabot') return res.json(loghandler.invalidKey)
         if(!kota) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kota"})
 
-       fetch(encodeURI(`https://raw.githubusercontent.com/Zhirrr/Zhirrr-Database/main/adzan/${kota}/2021/03.json`))
+       fetch(encodeURI(`https://api.xteam.xyz/jadwalsholat?kota=${kota}&APIKEY=AkiraBotWa`))
         .then(response => response.json())
         .then(data => {
         var result = data;
