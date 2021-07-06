@@ -2546,17 +2546,12 @@ router.get('/yutub/audio', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
-
-
 router.get('/ig/stalk', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            username = req.query.username
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'Alphabot') return res.json(loghandler.invalidKey)
-    if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
+        var username = req.query.username            
+	
+    if (!username) return res.json(loghandler.notusername)
 
-       fetch(encodeURI(`https://api.i-tech.id/dl/stalk?key=restuganteng&username=${username}`))
+       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/stalk?username=${username}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2569,6 +2564,8 @@ router.get('/ig/stalk', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
+
+
 
 
 router.get('/maker', async (req, res, next) => {
