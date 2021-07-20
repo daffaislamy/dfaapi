@@ -2536,21 +2536,5 @@ router.get('/maker/special/epep', async (req, res, next) => {
 })
 })
 
-router.get('/maker/harta-tahta', async(req, res, next) => {
-  const text = req.query.text;
-  
-  
-  if(!text) return res.json(loghandler.nottext)
-  
-  if(listkey.includes(apikey)) {
-  let hasil = 'https://xteam.xyz/tahta?text=${text}&APIKEY=AkiraBotWa' 
-  data = await fetch(hasil).then(v => v.buffer())
-  await fs.writeFileSync(__path +'/tmp/tahta.jpg', data)
-  res.sendFile(__path +'/tmp/tahta.jpg')
-  } else {
-    res.json(loghandler.invalidKey)
-  }
-});
-
 
 module.exports = router
